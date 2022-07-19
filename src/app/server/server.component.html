@@ -1,1 +1,1 @@
-<p>The server is ok!</p>
+<p class="alert" [ngClass]="getStatusClass()">Server #{{ serverId }} : {{ getServerStatus() }}</p>
