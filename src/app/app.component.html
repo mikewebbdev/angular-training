@@ -4,7 +4,17 @@
       <h1>Server Admin</h1>
       <hr>
       <app-servers></app-servers>
+
+      <button class="btn btn-primary" (click)="toggleDisplay()">Display Details</button>
+      <p *ngIf="!display else displayDetails"></p>
+      <ng-template  #displayDetails >
+        <p>I married into an Egyptian family and we spend plenty of time there. My Arabic isn’t amazing, but I can get by. I live for the horrified look on people’s faces when I switch to Arabic.</p>
+      </ng-template>
+      <div
+        *ngFor="let item of log; let i = index"
+        [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : '', color: i >= 4 ? 'white' : 'black'}">{{ item }}</div>
     </div>
   </div>
 </div>
+
 
