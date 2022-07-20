@@ -1,5 +1,7 @@
 <div class="container">
-  <app-servers-edit></app-servers-edit>
+  <app-servers-edit
+    (srvCreated)="onServerAdded($event)"
+    (bpCreated)="onBlueprintAdded($event)"></app-servers-edit>
   <hr>
   <app-server
     *ngFor="let element of serverElements"
