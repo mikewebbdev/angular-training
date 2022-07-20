@@ -3,18 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: [`
-  h1 {
-    color: blueviolet;
-  }`]
+  styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
-  display = false;
-  log = [];
+  serverElements = [];
 
-  toggleDisplay(){
-    this.display = !this.display;
-    this.log.push(this.display);
-  }
 }

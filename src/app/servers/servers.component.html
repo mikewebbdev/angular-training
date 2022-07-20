@@ -1,17 +1,16 @@
-<label>Server Name</label>
-<input
-  type="text"
-  class="form-control"
-  [(ngModel)]="serverName"
-  (input)="onUpdateServerName($event)"
- />
-<button
-  class="btn btn-primary"
-  [disabled]="serverName === ''"
-  (click)="onCreateServer()">Add Server</button>
-<p *ngIf="serverCreated; else noServer">Server created! It has been named: {{ serverName }}</p>
-<ng-template #noServer>
-  <p>No server created!</p>
-</ng-template>
-<hr />
-<app-server *ngFor="let server of servers"></app-server>
+<div class="row">
+  <div class="col-xs-12">
+    <p>Add new Servers or blueprints!</p>
+    <label>Server Name</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerName">
+    <label>Server Content</label>
+    <input type="text" class="form-control" [(ngModel)]="newServerContent">
+    <br>
+    <button
+      class="btn btn-primary"
+      (click)="onAddServer()">Add Server</button>
+    <button
+      class="btn btn-primary"
+      (click)="onAddBlueprint()">Add Server Blueprint</button>
+  </div>
+</div>
