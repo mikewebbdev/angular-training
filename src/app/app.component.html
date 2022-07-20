@@ -1,5 +1,8 @@
 <div class="container">
-  <app-servers></app-servers>
+  <app-servers-edit></app-servers-edit>
   <hr>
-  <app-server *ngFor="let element of serverElements"></app-server>
+  <app-server
+    *ngFor="let element of serverElements"
+    [srvElement]="element"
+  ></app-server>
 </div>
