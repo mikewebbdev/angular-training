@@ -13,3 +13,19 @@
     </p>
   </app-server>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <app-game-control
+        (running)="onRuntimeUpdated($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-odd *ngFor="let oddNumber of runtimeOdd" [number]="oddNumber"></app-odd>
+    </div>
+    <div class="col-sm-6">
+      <app-even *ngFor="let evenNumber of runtimeEven" [number]="evenNumber"></app-even>
+    </div>
+  </div>
+</div>

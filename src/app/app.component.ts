@@ -10,6 +10,8 @@ export class AppComponent {
     {type: 'server', name: 'TestServer', content: 'Just spinning up a test'},
     {type: 'blueprint', name: 'TestBlueprint', content: 'Just sketching out a test'}
   ];
+  runtimeOdd: number[] = [];
+  runtimeEven: number[] = [];
 
   onServerAdded(serverData: {serverName: string, serverContent: string}) {
     this.serverElements.push({
@@ -27,4 +29,14 @@ export class AppComponent {
     });
   }
 
+  onRuntimeUpdated($event: {runtime: number}) {
+    if ($event.runtime % 2 === 0) {
+      console.log('Even' + $event.runtime);
+      this.runtimeEven.push($event.runtime);
+    } else {
+      console.log('Odd' + $event.runtime);
+      this.runtimeOdd.push($event.runtime);
+
+    }
+  }
 }
