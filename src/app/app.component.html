@@ -1,31 +1,20 @@
-<div class="container">
-  <app-servers-edit
-    (srvCreated)="onServerAdded($event)"
-    (bpCreated)="onBlueprintAdded($event)"></app-servers-edit>
-  <hr>
-  <app-server
-    *ngFor="let element of serverElements"
-    [srvElement]="element"
-  >
-    <p>
-      <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-      <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-    </p>
-  </app-server>
-</div>
+<app-header (buttonClicked)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <app-game-control
-        (running)="onRuntimeUpdated($event)"></app-game-control>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <app-odd *ngFor="let oddNumber of runtimeOdd" [number]="oddNumber"></app-odd>
-    </div>
-    <div class="col-sm-6">
-      <app-even *ngFor="let evenNumber of runtimeEven" [number]="evenNumber"></app-even>
+    <div class="col-md-12">
+      <div class="row" *ngIf="loadedFeature == 'default'">
+        <p>Please select an area to look at from the nav.</p>
+      </div>
+      <div class="row" *ngIf="loadedFeature == 'server-management'">
+        <app-server-management></app-server-management>
+      </div>
+      <div class="row" *ngIf="loadedFeature == 'game-control'">
+        <app-events-game></app-events-game>
+      </div>
+      <div class="row" *ngIf="loadedFeature == 'highlight-directive'">
+        <app-highlight-directive></app-highlight-directive>
+      </div>
     </div>
   </div>
 </div>
+
