@@ -5,19 +5,11 @@ import {AccountsService} from "./accounts.service";
   selector: 'app-account-management',
   templateUrl: './account-management.component.html',
   styleUrls: ['./account-management.component.css'],
-  providers: [AccountsService]
+  providers: []
 })
 export class AccountManagementComponent {
   accounts = this.accountsService.accounts;
 
   constructor(private accountsService: AccountsService) {
-  }
-
-  onAccountAdded(newAccount: {name: string, status: string}) {
-
-  }
-
-  onStatusChanged(updateInfo: {id: number, newStatus: string}) {
-
   }
 }

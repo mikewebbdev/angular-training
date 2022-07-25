@@ -19,6 +19,8 @@ import {HighlightDirectiveComponent} from './highlight-directive/highlight-direc
 import {AccountManagementComponent} from './account-management/account-management.component';
 import {AccountComponent} from "./account-management/account/account.component";
 import {NewAccountComponent} from "./account-management/new-account/new-account.component";
+import {AccountsService} from "./account-management/accounts.service";
+import {LoggingService} from "./account-management/logging.service";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import {NewAccountComponent} from "./account-management/new-account/new-account.
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AccountsService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
