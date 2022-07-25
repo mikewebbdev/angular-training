@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  loadedFeature = 'account-management';
+  loadedFeature = 'user-management';
 
   onNavigate(target: {selectedFeature: string}) {
     this.loadedFeature = target.selectedFeature;

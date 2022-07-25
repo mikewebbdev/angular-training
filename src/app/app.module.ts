@@ -21,6 +21,9 @@ import {AccountComponent} from "./account-management/account/account.component";
 import {NewAccountComponent} from "./account-management/new-account/new-account.component";
 import {AccountsService} from "./account-management/accounts.service";
 import {LoggingService} from "./account-management/logging.service";
+import { UserManagementComponent } from './user-management/user-management.component';
+import { ActiveUsersComponent } from './user-management/active-users/active-users.component';
+import { InactiveUsersComponent } from './user-management/inactive-users/inactive-users.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import {LoggingService} from "./account-management/logging.service";
     ServersEditComponent,
     ServerManagementComponent,
     SuccessAlertComponent,
-    WarningAlertComponent
+    WarningAlertComponent,
+    UserManagementComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
