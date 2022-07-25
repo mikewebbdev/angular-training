@@ -1,31 +1,23 @@
 import { Component } from '@angular/core';
+import {AccountsService} from "./accounts.service";
 
 @Component({
   selector: 'app-account-management',
   templateUrl: './account-management.component.html',
-  styleUrls: ['./account-management.component.css']
+  styleUrls: ['./account-management.component.css'],
+  providers: [AccountsService]
 })
 export class AccountManagementComponent {
-  accounts = [
-    {
-      name: 'Master Account',
-      status: 'active'
-    },
-    {
-      name: 'Testaccount',
-      status: 'inactive'
-    },
-    {
-      name: 'Hidden Account',
-      status: 'unknown'
-    }
-  ];
+  accounts = this.accountsService.accounts;
+
+  constructor(private accountsService: AccountsService) {
+  }
 
   onAccountAdded(newAccount: {name: string, status: string}) {
-    this.accounts.push(newAccount);
+
   }
 
   onStatusChanged(updateInfo: {id: number, newStatus: string}) {
-    this.accounts[updateInfo.id].status = updateInfo.newStatus;
+
   }
 }
