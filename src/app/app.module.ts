@@ -24,6 +24,7 @@ import {LoggingService} from "./account-management/logging.service";
 import { UserManagementComponent } from './user-management/user-management.component';
 import { ActiveUsersComponent } from './user-management/active-users/active-users.component';
 import { InactiveUsersComponent } from './user-management/inactive-users/inactive-users.component';
+import {CounterService} from "./user-management/counter.service";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { InactiveUsersComponent } from './user-management/inactive-users/inactiv
     BrowserModule,
     FormsModule,
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [AccountsService, LoggingService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
