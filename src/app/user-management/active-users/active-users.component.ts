@@ -15,7 +15,7 @@ export class ActiveUsersComponent implements OnInit {
   }
 
   onSetToInactive(id: number) {
-    const userToSetToInactive = this.usersService.activeUsers.splice(id, 1);
-    this.usersService.inactiveUsers.push(userToSetToInactive[0]);  }
+    this.usersService.setToInactive(id);
+  }
 
 }
