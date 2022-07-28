@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {RouterModule, Routes} from "@angular/router";
 
 import {AppComponent} from './app.component';
 import {ServerComponent} from "./server-management/server/server.component";
@@ -32,6 +33,12 @@ import { UsersComponent } from './server-routing/users/users.component';
 import { EditServerComponent } from './server-routing/servers/servers/edit-server/edit-server.component';
 import { RoutingServerComponent } from './server-routing/servers/servers/routing-server/routing-server.component';
 import { UserComponent } from './server-routing/users/user/user.component';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'servers', component: ServersComponent }
+];
 
 @NgModule({
   declarations: [
@@ -66,6 +73,7 @@ import { UserComponent } from './server-routing/users/user/user.component';
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [AccountsService, LoggingService, CounterService],
   bootstrap: [AppComponent]
