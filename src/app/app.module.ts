@@ -25,6 +25,13 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { ActiveUsersComponent } from './user-management/active-users/active-users.component';
 import { InactiveUsersComponent } from './user-management/inactive-users/inactive-users.component';
 import {CounterService} from "./user-management/counter.service";
+import { ServerRoutingComponent } from './server-routing/server-routing.component';
+import { HomeComponent } from './server-routing/home/home.component';
+import { ServersComponent } from './server-routing/servers/servers.component';
+import { UsersComponent } from './server-routing/users/users.component';
+import { EditServerComponent } from './server-routing/servers/servers/edit-server/edit-server.component';
+import { RoutingServerComponent } from './server-routing/servers/servers/routing-server/routing-server.component';
+import { UserComponent } from './server-routing/users/user/user.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +54,14 @@ import {CounterService} from "./user-management/counter.service";
     WarningAlertComponent,
     UserManagementComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    ServerRoutingComponent,
+    HomeComponent,
+    ServersComponent,
+    UsersComponent,
+    EditServerComponent,
+    RoutingServerComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
