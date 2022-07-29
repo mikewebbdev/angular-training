@@ -22,7 +22,7 @@ export class ServersService {
     }
   ];
 
-  getServers() {
+  public getServers() {
     return this.servers;
   }
 

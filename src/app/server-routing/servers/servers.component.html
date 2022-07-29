@@ -2,7 +2,7 @@
   <div class="col-sm-12 col-md-4">
     <div class="list-group-horizontal">
       <a
-        [routerLink]="['/servers', 5, 'edit']"
+        [routerLink]="['/servers', server.id]"
         [queryParams]="{allowEdit: '1'}"
         fragment="loading"
         class="list-group-item"
@@ -14,6 +14,6 @@
   <div class="col-sm-12 col-md-4">
     <app-edit-server></app-edit-server>
     <hr>
-    <app-routing-server></app-routing-server>
+<!--    <app-routing-server></app-routing-server>-->
   </div>
 </div>
