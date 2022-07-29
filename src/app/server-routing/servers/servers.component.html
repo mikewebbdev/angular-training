@@ -2,7 +2,9 @@
   <div class="col-sm-12 col-md-4">
     <div class="list-group-horizontal">
       <a
-        href="#"
+        [routerLink]="['/servers', 5, 'edit']"
+        [queryParams]="{allowEdit: '1'}"
+        fragment="loading"
         class="list-group-item"
         *ngFor="let server of servers">
         {{ server.name }}
