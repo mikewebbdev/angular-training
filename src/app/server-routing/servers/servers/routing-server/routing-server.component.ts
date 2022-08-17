@@ -17,11 +17,11 @@ export class RoutingServerComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
-    this.server = this.serversService.getServer(parseInt(id));
+    this.server = this.serversService.getServer(+id);
     console.log(this.server);
     this.route.params.subscribe(
       (params: Params) => {
-        this.server = this.serversService.getServer(parseInt(params['id']));
+        this.server = this.serversService.getServer(+params['id']);
       }
     )
   }
