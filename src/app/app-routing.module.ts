@@ -18,6 +18,7 @@ const appRoutes: Routes = [
       { path: ':id', component: RoutingServerComponent },
       { path: ':id/edit', component: EditServerComponent }
     ] },
+  { path: 'login', redirectTo: 'servers'},
   { path: 'not-found', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 ];

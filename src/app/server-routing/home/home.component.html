@@ -2,5 +2,9 @@
 <p>Manage your Servers and Users.</p>
 <hr />
 <button class="btn btn-primary" (click)="onLoadServers(1)">Load first server via navigate</button>
-<button class="btn btn-success" (click)="onLogin()">Login</button>
-<button class="btn btn-danger" (click)="onLogout()">Logout</button>
+<div *ngIf="loggedIn">
+  <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+</div>
+<div *ngIf="!loggedIn">
+  <button class="btn btn-success" (click)="onLogin()">Login</button>
+</div>
