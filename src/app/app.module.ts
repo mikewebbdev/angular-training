@@ -34,6 +34,8 @@ import { RoutingServerComponent } from './server-routing/servers/servers/routing
 import { UserComponent } from './server-routing/users/user/user.component';
 import { PageNotFoundComponent } from './server-routing/page-not-found/page-not-found.component';
 import {AppRoutingModule} from "./app-routing.module";
+import {AuthService} from "./auth.service";
+import {AuthGuardService} from "./auth-guard.service";
 
 
 @NgModule({
@@ -72,7 +74,7 @@ import {AppRoutingModule} from "./app-routing.module";
     BrowserModule,
     FormsModule,
   ],
-  providers: [AccountsService, LoggingService, CounterService],
+  providers: [AccountsService, AuthService, AuthGuardService, LoggingService, CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

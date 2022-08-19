@@ -7,13 +7,14 @@ import {RoutingServerComponent} from "./server-routing/servers/servers/routing-s
 import {EditServerComponent} from "./server-routing/servers/servers/edit-server/edit-server.component";
 import {PageNotFoundComponent} from "./server-routing/page-not-found/page-not-found.component";
 import {NgModule} from "@angular/core";
+import {AuthGuardService} from "./auth-guard.service";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersComponent, children: [
       { path: ':id/:name', component: UserComponent },
     ] },
-  { path: 'servers', component: ServersComponent, children: [
+  { path: 'servers', canActivate: [AuthGuardService], component: ServersComponent, children: [
       { path: ':id', component: RoutingServerComponent },
       { path: ':id/edit', component: EditServerComponent }
     ] },
