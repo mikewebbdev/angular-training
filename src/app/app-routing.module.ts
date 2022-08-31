@@ -10,6 +10,7 @@ import {NgModule} from "@angular/core";
 import {AuthGuardService} from "./auth-guard.service";
 import {CanDeactivateGuard} from "./server-routing/servers/servers/edit-server/can-deactivate-guard.service";
 import {ErrorPageComponent} from "./server-routing/error-page/error-page.component";
+import {ServerResolverService} from "./server-routing/servers/servers/routing-server/server-resolver.service";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
       { path: ':id/:name', component: UserComponent },
     ] },
   { path: 'servers', canActivateChild: [AuthGuardService], component: ServersComponent, children: [
-      { path: ':id', component: RoutingServerComponent },
+      { path: ':id', component: RoutingServerComponent, resolve: {server: ServerResolverService} },
       { path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] }
     ] },
   { path: 'login', redirectTo: 'servers'},
